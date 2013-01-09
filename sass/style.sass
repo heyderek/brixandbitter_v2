@@ -1,0 +1,601 @@
+/*
+  *Theme Name: Brix and Bitter V2.0
+  *Theme URI: http://www.brixandbitter.com
+  *Description: A clean, semantic, HTML5 theme that utilizes CSS3.
+  *Author: Derek Nelson
+  *Author URI: http://dereknelson.net
+  *Version: 2.0
+  *Tags: html5, css3, blog, microformats
+  
+  *License: GPL
+  *License URI: license.txt */
+
+@import reset.sass
+@import frameless.sass
+
+//Colors
+
+$white: #fff
+$off_white: #f2f2f2
+$drk_orange: #F17836
+$lt_orange: #FFCC00
+$lt_grey: #f2f2f2
+$md_grey: #ccc
+$mdrk_grey: #999
+$drk_grey: #333
+
+//General
+
+body
+  color: $drk_grey
+  background: $drk_grey
+#page
+  background: $lt_grey
+  width: 100%
+  margin: 0
+  padding: 0
+  background: linear-gradient(45deg,  #bfbfbf 0%,#eaeaea 50%,#bfbfbf 100%)
+.wrapper
+  width: $cols16
+  margin: 0 auto
+  position: relative
+blockquote
+  border-left: 4px solid $mdrk_grey
+  margin: 0 0 20px 20px
+  padding-left: 20px
+  font-style: italic
+  color: $mdrk_grey
+a
+  text-decoration: none
+  color: $drk_orange
+  transition: all 250ms linear
+  &:hover
+    color: $lt_orange
+strong
+  font-weight: bold
+em
+  font-style: italic
+p
+  margin: 0 0 20px 0
+ul
+  list-style: outside square
+  margin: 0 0 20px 10px
+  padding: 0 0 0 10px
+ol
+  list-style: outside decimal
+  margin: 0 0 20px 10px
+  padding: 0 0 0 10px
+
+//Forms
+
+input[type="text"], textarea
+  background: #8c8c8c
+  border-radius: 5px
+  padding: 5px 10px
+  margin: 0 0 10px
+  color: $md_grey
+  max-width: 15em
+  border: 1px solid $md_grey
+  &:focus
+    background: $lt_grey
+    color: $drk_grey
+select
+  background: #8c8c8c
+  border-radius: 5px
+  border: 1px solid $md_grey
+  margin: 0 0 10px
+  color: $md_grey
+  padding: 5px 10px
+  &:focus
+    background: $lt_grey
+    color: $drk_grey
+    border: 1px solid $md_grey
+input[type=submit], input[type=reset], input#submit
+  border: 1px solid #FFFF00
+  background: #ffc04e
+  background: linear-gradient(top,  #ffc04e 0%,#ff9f0c 100%)
+  box-shadow:  0px 0px 1px 1px rgba(0, 0, 0, .15)
+  border-radius: 5px
+  font-family: inherit
+  font-weight: bold
+  padding: 5px 10px
+  color: #FF6600
+  text-shadow: 0 1px 0 #FFFF00
+  &:hover
+    color: #FF7A0B
+
+//Typography
+
+body, input[type="text"], textarea
+  font-family: 'Chivo', Helvetica, Arial, sans-serif
+  font-size: 16px
+h1,h2,h3,h4,h5,h6
+  font-family: 'Open Sans Condensed', Helvetica, Arial, sans-serif
+  margin: 0 0 20px 0
+  font-weight: bold
+  text-transform: uppercase
+h2, #secondary 
+  h1,h2,h3,h4,h5,h6
+    font-weight: normal
+footer
+  font-family: 'Open Sans Condensed', Helvetica, Arial, sans-serif
+  text-transform: lowercase
+
+//Header
+
+header
+  white-space: nowrap
+  hgroup, nav
+    vertical-align: top
+    white-space: normal
+    box-sizing: border-box
+  hgroup
+    display: inline-block
+    width: $cols3
+    padding: 10px 0
+    h1,h2
+      text-indent: -9999em
+      margin: 0
+      position: absolute
+    #logo
+      position: absolute
+      width: $cols3
+      display: block
+      z-index: 9
+      left: 1%
+      img
+        max-width: 100%
+        width: 100%
+        height: auto
+  nav
+    width: $cols13 - 1em
+    display: inline-block
+    margin:
+      left: 2em
+    border:
+      bottom: 2px solid $drk_grey
+    ul
+      list-style: none
+      margin: 0
+      padding: 0
+    ul li
+      display: inline-block
+      &:hover ul
+        display: block
+      a
+        display: block
+        color: $drk_grey
+        text-transform: lowercase
+        padding: 20px 15px
+        transition: none
+        &:hover
+          color: $white
+          background: url(images/br-lt.gif) left center no-repeat, url(images/br-rt.gif) right center no-repeat
+      ul
+        display: none
+        position: absolute
+        z-index: 9
+        background: $drk_grey
+        border-radius: 0 0 5px 5px
+        box-shadow: 0 1px 3px #333
+        li
+          display: block
+          width: $cols3
+          text-align: center
+          border:
+            bottom: 2px dotted $lt_grey
+          a
+            color: $lt_grey
+            padding: 10px
+            &:hover
+              color: $md_grey
+              background: none
+          &:last-child
+            border:
+              bottom: none
+  #social
+    margin: 5px 0
+    list-style: none
+    padding: 0
+    position: absolute
+    right: 0
+    li
+      display: inline-block
+      font-size: 16px
+      vertical-align: top
+      box-sizing: border-box
+
+//Front Page
+
+.front-page
+  padding: 60px 20px 80px
+  
+.fp-text, .fp-graphic
+  display: inline-block
+  vertical-align: middle
+  box-sizing: border-box
+.fp-text
+  width: $cols4
+  text-shadow: -1px -1px 2px $white
+  line-height: 1.35
+  h3
+    font-size: 42px
+    line-height: 1
+    text-shadow: 1px 1px 0 $lt_grey, 2px 3px 0 $drk_grey
+.fp-graphic
+  width: $cols9
+  text-align: center
+  padding: 20px
+  img
+    max-width: 100%
+    height: auto
+#fp_1
+  background: url(images/fp_mnt-graphic.png) bottom right no-repeat
+  .fp-text
+    margin-left: $cols3 + 2em
+#fp_2
+  background: url(images/fp_hills-graphic.png) bottom center repeat-x $md_grey
+  background: url(images/fp_hills-graphic.png) bottom center repeat-x, url(images/sun-graphic.png) bottom center no-repeat, linear-gradient(to bottom,  #ffffff 0%,#cccccc 100%)
+  background: url(images/fp_hills-graphic.png) bottom center repeat-x, url(images/sun-graphic.png) bottom center no-repeat, linear-gradient(top,  #ffffff 0%,#cccccc 100%)
+  .fp-graphic
+    margin-left: $cols3
+#fp_3
+  background: $drk_grey
+  .fp-text
+    margin-left: $cols3 + 2em
+    color: $lt_grey
+    text-shadow: -1px -1px #000
+    h3
+      text-shadow: 1px 1px 0 $drk_grey, 2px 3px 0 $lt_grey
+#fp_4
+  background: linear-gradient(center top , #CCCCCC 0%, #F2F2F2 100%) repeat scroll 0 0 transparent
+  .fp-text
+    background: url(images/bracket.png) center top no-repeat
+    z-index: 9
+    margin-top: -120px
+    padding:
+      top: 180px
+    width: $cols6
+    margin-left: $cols6
+  form
+    margin: 0 auto
+
+//Footer
+
+footer#colophon
+  color: $mdrk_grey
+  background: $drk_grey
+  text-align: center
+  a
+    color: $white
+    &:hover
+      color: $mdrk_grey
+  .wrapper
+    padding: 30px 0
+    
+  #footer_lft, #ft_logo, #footer_rt
+    display: inline-block
+    vertical-align: middle
+    box-sizing: border-box
+  #footer_lft, #footer_rt
+    width: $cols7
+    aside.container
+      border:
+        top: 3px dotted $mdrk_grey
+        bottom: 3px dotted $mdrk_grey
+      padding: 20px
+      margin-bottom: 5px
+      ul
+        list-style: none
+        margin: 0
+        padding: 0
+        li
+          display: inline-block
+          &:after
+            content: " / "
+          &:last-child
+            &:after
+              content: none
+    span
+      font-style: italic
+  #ft_logo
+    width: $cols2
+    text-align: center
+    a
+      display: block
+      margin-top: -15px
+
+//Content
+
+#page
+  border:
+    top: 5px solid $drk_grey
+.main
+  background: $off_white
+  margin-top: 45px
+  padding: 20px 0
+  width: 100%
+  white-space: nowrap
+#primary, #secondary
+  box-sizing: border-box
+  display: inline-block
+  white-space: normal
+  vertical-align: top
+  line-height: 1.35
+  h1,h2,h3,h4,h5,h6
+    line-height: 1 
+#primary
+  width: $cols13
+  margin-left: $cols3 + 2em
+  h1,h2,h3,h4,h5,h6
+    text-transform: capitalize
+    font-size: 42px
+  h2,h4,h6
+    font-weight: normal
+    font-size: 32px
+  .entry-meta
+    h1,h2,h3,h4,h5,h6
+      font-size: 24px
+  .entry-title a
+    color: $drk_grey
+    &:hover
+      color: $drk_orange
+  article.post
+    border-bottom: 3px dotted $mdrk_grey
+    padding-bottom: 20px
+    margin-bottom: 20px
+    &:last-child
+      border-bottom: none
+    footer.entry-meta
+      text-transform: capitalize
+  #featured_frame
+    position: relative
+    width: 100%
+    z-index: 1
+    margin: 0 0 20px
+    &:before
+      transform: rotate(-2deg) skew(-9deg)
+      background: transparent
+      bottom: 18px
+      box-shadow: -10px 10px 10px rgba(0,0,0,.5)
+      content: " "
+      height: 70%
+      width: 70%
+      position: absolute
+      left: 17px
+      z-index: 0
+    &:after
+      transform: rotate(2deg) skew(9deg)
+      background: transparent
+      bottom: 18px
+      box-shadow: 10px 10px 10px rgba(0,0,0,.5)
+      content: " "
+      height: 70%
+      position: absolute
+      right: 27px
+      width: 70%
+      z-index: 1
+    img
+      border: 5px solid $white
+      box-shadow: 1px 1px 3px rgba(0,0,0,.5)
+      position: relative
+      z-index: 9
+      max-width: 100%
+      height: auto
+  .nav-previous,.nav-next
+    display: inline-block
+    margin: 20px 0 0
+    a
+      background: $md_grey
+      border: 1px solid #bbb
+      text-shadow: -1px 0 1px #777
+      color: $white
+      border-radius: 15px
+      padding: 5px 20px
+      display: block
+      box-shadow: 0 1px 3px rgba(0,0,0,.35)
+      &:hover
+        color: $off_white
+        background: #bbb
+        border: 1px solid $md_grey
+#secondary
+  width: $cols3
+  margin-left: -$cols16
+  margin-top: 125px
+  aside
+    border-bottom: 3px dotted $md_grey
+    padding: 20px 0
+    &:last-child
+      border-bottom: none
+  h3
+    font-size: 24px
+#primary
+  form
+    margin-left: $gutter
+
+//Comments
+.commentlist, .children
+  list-style: none
+  article.comment
+    border-bottom: 3px dotted $drk_grey
+    padding-bottom: 20px
+    margin-bottom: 20px
+    footer
+      float: left
+      margin-right: 20px
+    cite, .says
+      display: inline-block
+      vertical-align: top
+      img
+        margin: 0 20px 20px 0
+    cite
+      font-weight: bold
+      font-style: normal
+    .comment-meta
+      font-size: 14px
+    .comment-content
+      margin:
+        top: 20px
+        left: 80px
+      clear: left
+
+//Twitter Widget
+#widget_twitter_vjck
+  ul
+    margin: 0
+    padding: 0
+    font-size: 14px
+#twitter_time_line
+  li
+    list-style: disc outside
+    margin-bottom: 20px
+
+//Images
+
+.aligncenter
+  margin: 0 auto
+  display: block
+  max-width: 100%
+  height: auto
+.alignleft
+  float: left
+  margin: 0 20px 20px 0
+  max-width: 100%
+  height: auto
+.alignright
+  float: right
+  margin: 0 0 20px 20px
+  max-width: 100%
+  height: auto
+
+//Break Points
+
+@media screen and (min-width: 960px) and (max-width: 1219px)
+  .wrapper
+    width: $cols12
+  header
+    nav
+      width: $cols9
+  #primary
+    width: $cols9
+  #secondary
+    margin-left: -$cols12
+  footer#colophon
+    #footer_lft, #footer_rt
+      width: $cols5
+  //Front Page
+  .fp-text
+    width: $cols3
+  .fp-graphic
+    width: $cols6
+
+@media screen and (min-width: 700px) and (max-width: 959px)
+  .wrapper
+    width: $cols8
+  header
+    hgroup
+      display: block
+      width: $cols8
+      #logo
+        width: $cols2
+        position: relative
+        margin: 0 auto
+    nav
+      border-top: 2px solid $drk_grey
+      display: block
+      width: $cols8
+      margin-left: 0
+    #social
+      position: relative
+      text-align: right
+  .main
+    margin-top: 0
+  #primary
+    width: $cols8
+    margin-left: 0
+    display: block
+  #secondary
+    margin: 0
+    display: block
+    width: $cols8
+  footer#colophon
+    #footer_lft, #footer_rt, #ft_logo
+      display: block
+      width: $cols8
+    #ft_logo
+      margin: 20px 0
+      a
+        margin: 0
+  //Front Page
+  .front-page
+    padding-top: 20px
+  #fp_1, #fp_2, #fp_3, #fp_4
+    .fp-text
+      width: $cols8
+      margin-left: 0
+    .fp-graphic
+      width: $cols8
+      margin-left: 0
+
+@media screen and (min-width: 0px) and (max-width: 699px)
+  .wrapper
+    width: $cols4
+  header
+    hgroup
+      display: block
+      width: $cols4
+      #logo
+        width: $cols2
+        position: relative
+        margin: 0 auto
+    nav
+      display: block
+      width: $cols4
+      margin-left: 0
+      border-bottom: none
+      text-align: center
+      ul
+        width: 100%
+        border: 2px solid $drk_grey
+      ul li
+        display: block
+        width: 100%
+        border-bottom: 2px solid $drk_grey
+        &:last-child
+          border-bottom: none
+        a
+          &:hover
+            background: none
+        ul li
+          width: 100%
+    #social
+      position: relative
+      text-align: center
+  .main
+    margin-top: 0
+  #primary
+    width: $cols4
+    margin-left: 0
+    display: block
+  #secondary
+    margin: 0
+    display: block
+    width: $cols4
+  footer#colophon
+    #footer_lft, #footer_rt, #ft_logo
+      display: block
+      width: $cols4
+    #ft_logo
+      margin: 20px 0
+      a
+        margin: 0
+  //Front Page
+  .front-page
+    padding-top: 20px
+  #fp_1, #fp_2, #fp_3, #fp_4
+    .fp-text
+      width: $cols4
+      margin-left: 0
+    .fp-graphic
+      width: $cols4
+      margin-left: 0
