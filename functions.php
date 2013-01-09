@@ -61,109 +61,16 @@ register_nav_menus( array(
   'sitemap' => __( 'Footer Sitemap', 'bnb' ),
   ) );
 
-//Add Months taxonomy for use with the custom Itinerary.
-function add_months() {
-	$label = array(
-		'name' => _x( 'Months' ),
-		'singular_name' => _x( 'Month','' ),
-		'search_items' => __( 'Search Months' ),
-		'all_items' => __( 'All Months' ),
-		'edit_item' => __( 'Edit Month' ),
-		'update_item' => __( 'Update Month' ),
-		'add_new_item' => __( 'Add New Month' ),
-		'new_item_name' => __( 'New Month Name' ),
-		'menu_name' => _x( 'Months' )
-	);
-	register_taxonomy( 'month', array( 'itinerary' ), array(
-		'hierarchical' => true,
-		'labels' => $label
-	) );
-}
-add_action( 'init','add_months' );
+//Itineraries Post Type
+require_once('admin/itineraries.php');
 
-//Add the Itinerary post type
-function add_itinerary() {
-  $label = array(
-    'name' => _x( 'Itinerary' ),
-    'singular_name' => _x( 'Itinerary' ),
-    'edit_item' => __( 'Edit Itinerary' ),
-  );
-  $params = array(
-    'labels' => $label,
-    'public' => true,
-    'show_in_menu' => true,
-    'has_archive' => true,
-    'capability_type' => 'post',
-    'hierarchical' => true,
-    'menu_position' => 15,
-    'supports' => array( 'title', 'editor', 'revisions', 'thumbnail' )
-  );
-  register_post_type( 'itinerary', $params );
-}
-add_action( 'init', 'add_itinerary' );
+//Destinations Post Type
+require_once('admin/destinations.php');
 
-//Add Destinations post type
-function add_dest() {
-  $label = array(
-    'name' => _x( 'Destinations' ),
-    'singular_name' => _x( 'Destination' ),
-    'edit_item' => __( 'Edit Destination' ),
-  );
-  $params = array(
-    'labels' => $label,
-    'public' => true,
-    'show_in_menu' => true,
-    'has_archive' => true,
-    'capability_type' => 'post',
-    'hierarchical' => false,
-    'menu_position' => 15,
-    'supports' => array( 'title', 'editor', 'revisions', 'thumbnail' )
-  );
-  register_post_type( 'destinations', $params );
-}
-add_action( 'init', 'add_dest' );
+//Add Comments
+require_once('admin/comments.php');
 
-//Add Comment functionality
-if ( ! function_exists( 'brixnbitter_comment' ) ) :
-function brixnbitter_comment( $comment, $args, $depth ) {
-  $GLOBALS['comment'] = $comment;
-  switch ( $comment->comment_type ) :
-  case 'pingback' :
-  case 'trackback' : ?>
-  <li class="post pingback">
-    <p><?php _e( 'Pingback:', 'brixnbitter' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( '(Edit)', 'bnb' ), ' ' ); ?></p>
-  <?php
-    break;
-    default : ?>
-  <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-    <article id="comment-<?php comment_ID(); ?>" class="comment">
-      <footer>
-        <div class="comment-author vcard">
-          <?php echo get_avatar( $comment, 40 ); ?>
-        </div><!-- .comment-author .vcard -->
-        <?php if ( $comment->comment_approved == '0' ) : ?>
-        <em><?php _e( 'Your comment is awaiting moderation.', 'brixnbitter' ); ?></em>
-        <br />
-      <?php endif; ?>
-      </footer>
-      <?php printf( __( '%s <span class="says">says:</span>', 'brixnbitter' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
-      <div class="comment-meta commentmetadata">
-        <a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time pubdate datetime="<?php comment_time( 'c' ); ?>">
-        <?php printf( __( '%1$s at %2$s', 'brixnbitter' ), get_comment_date(), get_comment_time() ); ?>
-        </time></a>
-        <?php edit_comment_link( __( '(Edit)', 'brixnbitter' ), ' ' );
-        ?>
-      </div><!-- .comment-meta .commentmetadata -->
-      <div class="comment-content"><?php comment_text(); ?></div>
-      <div class="reply">
-        <?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-      </div><!-- .reply -->
-  </article><!-- #comment-## -->
-  <?php
-  break;
-  endswitch;
-}
-endif; // ends check for brixnbitter_comment()
+require_once('admin/metaboxes.php');
 
 //Post Navigation Functionality
 if ( ! function_exists( 'brixnbitter_content_nav' ) ):
@@ -189,74 +96,6 @@ endif;
 if ( !function_exists( 'optionsframework_init' ) ) {
   define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
   require_once dirname( __FILE__ ) . '/inc/options-framework.php';
-}
-
-//Add metaboxes for date and time for custom itineraries.
-function cmb_sample_metaboxes( array $meta_boxes ) {
-
-	// Start with an underscore to hide fields from custom fields list
-	$prefix = '_cmb_';
-	$ittime = array(
-				'name' => 'Time',
-				'desc' => 'Time',
-				'id'   => $prefix . 'first_timestamp',
-				'type' => 'text_datetime_timestamp',
-			);
-	$options_pages = array();
-	$options_pages_obj = get_posts( array('post_type' => 'destinations'));
-		foreach ($options_pages_obj as $page) {
-			$options_pages[$page->ID] = $page->post_title;
-	}
-
-	$meta_boxes[] = array(
-		'id'         => 'test_metabox',
-		'title'      => 'Custom Itinerary',
-		'pages'      => array( 'itinerary', ), // Post type
-		'context'    => 'normal',
-		'priority'   => 'high',
-		'show_names' => true, // Show field names on the left
-		'fields'     => array(
-			array(
-				'name' => 'Time/Date',
-				'desc' => 'Time and date',
-				'id'   => $prefix . 'test_datetime_timestamp',
-				'type' => 'text_datetime_timestamp'
-			),
-			array(
-				'name'    => 'Itinerary Items for Attachment',
-				'desc'    => 'A list of items to attach to a itinerary.',
-				'id'      => $prefix . 'test_multicheckbox',
-				'type'    => 'multicheck',
-				'options' => $options_pages			
-			)
-		)
-	);
-
-	// Add other metaboxes as needed
-	return $meta_boxes;
-}
-add_filter( 'cmb_meta_boxes', 'cmb_sample_metaboxes' );
-add_action( 'init', 'cmb_initialize_cmb_meta_boxes', 9999 );
-
-$return_pages = array();
-$return_pages_obj = get_posts( array('post_type' => 'destinations'));
-	foreach ($return_pages_obj as $page) {
-		$return_pages[$page->ID] = $page->post_title;
-}
-
-add_action( 'cmb_render_text_email', 'rrh_cmb_render_text_email', 10, 2 );
-
-function rrh_cmb_render_text_email( $field, $meta ) {
-					echo '<ul>';
-					$i = 1;
-					foreach ( $field['options'] as $value => $name ) {
-						// Append `[]` to the name to get multiple values
-						// Use in_array() to check whether the current option should be checked
-						echo '<li><input type="checkbox" name="', $field['id'], '[]" id="', $field['id'], $i, '" value="', $value, '"', in_array( $value, $meta ) ? ' checked="checked"' : '', ' /><label for="', $field['id'], $i, '">', $name, '</label></li>';	
-						$i++;
-					}
-					echo '</ul>';
-					echo '<span class="cmb_metabox_description">', $field['desc'], '</span>';				
 }
 
 /**
