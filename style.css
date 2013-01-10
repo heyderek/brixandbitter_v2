@@ -547,14 +547,14 @@ footer#colophon {
     #primary .nav-previous a, #primary .nav-next a {
       background: #cccccc;
       border: 1px solid #bbbbbb;
-      text-shadow: -1px 0 1px #777777;
-      color: white;
+      text-shadow: -1px 0 1px white;
+      color: #777777;
       border-radius: 15px;
       padding: 5px 20px;
       display: block;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35); }
       #primary .nav-previous a:hover, #primary .nav-next a:hover {
-        color: #f2f2f2;
+        color: #333333;
         background: #bbbbbb;
         border: 1px solid #cccccc; }
 
@@ -624,15 +624,15 @@ footer#colophon {
   background: #cccccc;
   display: inline-block;
   border: 1px solid #bbbbbb;
-  text-shadow: -1px 0 1px #777777;
+  text-shadow: -1px 0 1px white;
   font: inherit;
   margin-right: 5px;
-  color: white;
+  color: #777777;
   border-radius: 15px;
   padding: 5px 20px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35); }
   .button:hover {
-    color: #f2f2f2;
+    color: #333333;
     background: #bbbbbb;
     border: 1px solid #cccccc; }
   .button:last-child {
