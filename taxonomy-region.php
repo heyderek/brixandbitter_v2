@@ -49,15 +49,18 @@
               $subpost = new WP_Query($args);
               $parentterm = $wp_query->queried_object;
               
-              echo '<h4>' . $term->name . ' in the ' . $parentterm->name . '</h4>';
+              echo '<h4 class="learnmore"><button>' . $term->name . ' in the ' . $parentterm->name . '&nbsp;<span>(Click to Learn More.)</span></button></h4>';
               
-              echo '<ul>';
+              echo '<ul class="destination-list">';
               
               while($subpost->have_posts()) : $subpost->the_post();
                 echo '<li><h4><a href="', the_permalink(), '">' , the_title(), '</a></h4>', the_excerpt(),'</li>';
               endwhile;
               
+              echo '<button class="close button">Close</button><a href="#page" class="button">Back to top &raquo;</a>';
+              
               echo '</ul>';
+              
               
             endwhile;
             

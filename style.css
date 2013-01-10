@@ -608,6 +608,36 @@ footer#colophon {
     max-width: 100%;
     height: auto; }
 
+.learnmore {
+  color: white; }
+  .learnmore button {
+    background: none;
+    border: none;
+    color: #f17836;
+    font: inherit;
+    border-radius: 8px; }
+  .learnmore span {
+    font-size: 22px;
+    color: #333333; }
+
+.button {
+  background: #cccccc;
+  display: inline-block;
+  border: 1px solid #bbbbbb;
+  text-shadow: -1px 0 1px #777777;
+  font: inherit;
+  margin-right: 5px;
+  color: white;
+  border-radius: 15px;
+  padding: 5px 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35); }
+  .button:hover {
+    color: #f2f2f2;
+    background: #bbbbbb;
+    border: 1px solid #cccccc; }
+  .button:last-child {
+    margin-right: 0; }
+
 .commentlist, .children {
   list-style: none; }
   .commentlist article.comment, .children article.comment {
