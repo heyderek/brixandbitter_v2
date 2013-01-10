@@ -9,7 +9,8 @@
   <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Chivo:400,900,400italic,900italic' rel='stylesheet' type='text/css'>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
   <script src="<?php bloginfo('template_url'); ?>/js/prefixfree.min.js" charset="utf-8"></script>
-  <script src="<?php bloginfo('template_url'); ?>/js/html5.js" charset="utf-8"></script>
+  <script src="<?php bloginfo('template_url'); ?>/js/custom.js" charset="utf-8"></script>
+  <!--[if lt IE 9]><script src="<?php bloginfo('template_url'); ?>/js/html5.js" charset="utf-8"></script><![endif]-->
   <title><?php
   /*
    * Print the <title> tag based on what is being viewed.
