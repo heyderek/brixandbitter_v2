@@ -33,7 +33,7 @@
             
             while($posts->have_posts()) : $posts->the_post();
               
-              echo '<h4>' . $term->name . '</h4><div class="featured-frame">', the_post_thumbnail('featured'), '</div>';
+              echo '<h3>' . $term->name . '</h3><div class="featured-frame">', the_post_thumbnail('featured'), '</div>';
               
               $args = array(
                 'posts_per_page' => -1,
