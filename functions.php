@@ -52,6 +52,14 @@ function bnb_home_menu( $args ) {
 }
 add_filter( 'wp_page_menu_args', 'bnb_home_menu' );
 
+//Change the excerpt and make it pretty.
+function readmore_excerpt($more) {
+  global $post;
+  return '&nbsp;<a class="excerpt-link" href="' . get_permalink($post->ID) . '">Read More About ' . get_the_title($post->ID) . '&raquo;</a>';
+}
+
+add_filter('excerpt_more', 'readmore_excerpt');
+
 //Add Primary Menu Area
 register_nav_menus( array(
   'primary' => __( 'Primary Menu', 'bnb' ),

@@ -31,12 +31,33 @@
             );
             $posts = new WP_Query($args);
             
-            /* echo '<h4>' . $term->name . '</h4>'; */
-            
             while($posts->have_posts()) : $posts->the_post();
               
-              echo '<h4>' . $term->name . '</h4>';
-              echo the_post_thumbnail('featured');
+              echo '<h4>' . $term->name . '</h4><div class="featured-frame">', the_post_thumbnail('featured'), '</div>';
+              
+              $args = array(
+                'posts_per_page' => -1,
+                'tax_query' => array(
+                  array(
+                    'taxonomy' => $taxonomy,
+                    'field' => 'slug',
+                    'terms' => $slug
+                  )
+                )
+              );
+              
+              $subpost = new WP_Query($args);
+              $parentterm = $wp_query->queried_object;
+              
+              echo '<h4>' . $term->name . ' in the ' . $parentterm->name . '</h4>';
+              
+              echo '<ul>';
+              
+              while($subpost->have_posts()) : $subpost->the_post();
+                echo '<li><h4><a href="', the_permalink(), '">' , the_title(), '</a></h4>', the_excerpt(),'</li>';
+              endwhile;
+              
+              echo '</ul>';
               
             endwhile;
             
