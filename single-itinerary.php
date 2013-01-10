@@ -30,7 +30,7 @@
               <?php while($gather_dest->have_posts()) : $gather_dest->the_post(); ?>
               <h3><a name="<?php echo $post->post_name; ?>"><?php the_title(); ?></a></h3>
               <?php if (has_post_thumbnail()) : ?>
-                <div id="featured_frame">
+                <div class="featured-frame">
                   <?php the_post_thumbnail('featured'); ?>		
                 </div><!-- /#featured_frame -->
               <?php endif; ?>              <?php the_content(); ?>

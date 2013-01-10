@@ -5,7 +5,7 @@
         <?php while(have_posts()):the_post(); ?>
         <h3 class="page-title"><?php the_title(); ?></h3>
             <?php if (has_post_thumbnail()) : ?>
-              <div id="featured_frame">
+              <div class="featured-frame">
                 <?php the_post_thumbnail('featured'); ?>		
               </div><!-- /#featured_frame -->
             <?php endif; ?>
