@@ -638,6 +638,9 @@ footer#colophon {
   .button:last-child {
     margin-right: 0; }
 
+.region-description p {
+  white-space: normal; }
+
 .commentlist, .children {
   list-style: none; }
   .commentlist article.comment, .children article.comment {

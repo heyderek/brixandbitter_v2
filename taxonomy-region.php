@@ -3,12 +3,11 @@
       <div class="wrapper">
         <section id="primary">
           <h1 class="entry-title"><?php printf( __( '%s', '' ),  single_term_title( '', false ) ); ?></h1>
-          <header>
-              <p><?php
+          <header class="region-description">
+              <?php
               $category_description = category_description();
                 if ( ! empty( $category_description ) )
                 echo apply_filters( 'category_archive_meta', $category_description ); ?>
-              </p>
           </header>
           <?php
           $taxonomy = 'region';
