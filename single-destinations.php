@@ -6,7 +6,7 @@
           <article class="post">
             <h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
             <?php if (has_post_thumbnail()) : ?>
-              <div id="featured_frame">
+              <div class="featured-frame">
                 <?php the_post_thumbnail('featured'); ?>		
               </div><!-- /#featured_frame -->
             <?php endif; ?>

@@ -375,40 +375,6 @@ footer#colophon
       right: 27px
       width: 70%
       z-index: 1
-  .featured-frame
-    position: relative
-    width: 100%
-    z-index: 1
-    margin: 0 0 20px
-    &:before
-      transform: rotate(-2deg) skew(-9deg)
-      background: transparent
-      bottom: 18px
-      box-shadow: -10px 10px 10px rgba(0,0,0,.5)
-      content: " "
-      height: 70%
-      width: 70%
-      position: absolute
-      left: 17px
-      z-index: 0
-    &:after
-      transform: rotate(2deg) skew(9deg)
-      background: transparent
-      bottom: 18px
-      box-shadow: 10px 10px 10px rgba(0,0,0,.5)
-      content: " "
-      height: 70%
-      position: absolute
-      right: 27px
-      width: 70%
-      z-index: 1
-    img
-      border: 5px solid $white
-      box-shadow: 1px 1px 3px rgba(0,0,0,.5)
-      position: relative
-      z-index: 9
-      max-width: 100%
-      height: auto
   .nav-previous,.nav-next
     display: inline-block
     margin: 20px 0 0
@@ -439,6 +405,41 @@ footer#colophon
 #primary
   form
     margin-left: $gutter
+.featured-frame
+  position: relative
+  width: 100%
+  z-index: 1
+  margin: 0 0 20px
+  &:before
+    transform: rotate(-2deg) skew(-9deg)
+    background: transparent
+    bottom: 18px
+    box-shadow: -10px 10px 10px rgba(0,0,0,.5)
+    content: " "
+    height: 70%
+    width: 70%
+    position: absolute
+    left: 17px
+    z-index: 0
+  &:after
+    transform: rotate(2deg) skew(9deg)
+    background: transparent
+    bottom: 18px
+    box-shadow: 10px 10px 10px rgba(0,0,0,.5)
+    content: " "
+    height: 70%
+    position: absolute
+    right: 27px
+    width: 70%
+    z-index: 1
+  img
+    border: 5px solid $white
+    box-shadow: 1px 1px 3px rgba(0,0,0,.5)
+    position: relative
+    z-index: 9
+    max-width: 100%
+    height: auto
+
 
 //Comments
 .commentlist, .children

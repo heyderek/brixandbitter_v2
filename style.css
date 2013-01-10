@@ -541,40 +541,6 @@ footer#colophon {
       right: 27px;
       width: 70%;
       z-index: 1; }
-  #primary .featured-frame {
-    position: relative;
-    width: 100%;
-    z-index: 1;
-    margin: 0 0 20px; }
-    #primary .featured-frame:before {
-      transform: rotate(-2deg) skew(-9deg);
-      background: transparent;
-      bottom: 18px;
-      box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.5);
-      content: " ";
-      height: 70%;
-      width: 70%;
-      position: absolute;
-      left: 17px;
-      z-index: 0; }
-    #primary .featured-frame:after {
-      transform: rotate(2deg) skew(9deg);
-      background: transparent;
-      bottom: 18px;
-      box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
-      content: " ";
-      height: 70%;
-      position: absolute;
-      right: 27px;
-      width: 70%;
-      z-index: 1; }
-    #primary .featured-frame img {
-      border: 5px solid white;
-      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-      position: relative;
-      z-index: 9;
-      max-width: 100%;
-      height: auto; }
   #primary .nav-previous, #primary .nav-next {
     display: inline-block;
     margin: 20px 0 0; }
@@ -606,6 +572,41 @@ footer#colophon {
 
 #primary form {
   margin-left: 20px; }
+
+.featured-frame {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  margin: 0 0 20px; }
+  .featured-frame:before {
+    transform: rotate(-2deg) skew(-9deg);
+    background: transparent;
+    bottom: 18px;
+    box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.5);
+    content: " ";
+    height: 70%;
+    width: 70%;
+    position: absolute;
+    left: 17px;
+    z-index: 0; }
+  .featured-frame:after {
+    transform: rotate(2deg) skew(9deg);
+    background: transparent;
+    bottom: 18px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    content: " ";
+    height: 70%;
+    position: absolute;
+    right: 27px;
+    width: 70%;
+    z-index: 1; }
+  .featured-frame img {
+    border: 5px solid white;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 9;
+    max-width: 100%;
+    height: auto; }
 
 .commentlist, .children {
   list-style: none; }
