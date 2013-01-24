@@ -3,6 +3,7 @@
       <div class="wrapper">
         <section id="primary">
           <h1 class="entry-title">Regions we Tour</h1>
+          <article><?php echo of_get_option('editor_5'); ?></article>
           <?php 
             $post_type = 'destinations';
             // Get all the taxonomies for this post type

@@ -126,7 +126,17 @@ function optionsframework_options() {
 		'id' => 'editor_4',
 		'type' => 'editor',
 		'settings' => $wp_editor_settings );
-
+		
+	$options[] = array(
+		'name' => __('Destinations', 'options_framework_theme'),
+		'type' => 'heading');
+		
+	$options[] = array(
+		'name' => __('Destinations Text', 'options_framework_theme'),
+		'desc' => sprintf( __( 'Text section for the destinations page.', 'options_framework_theme' ), 'http://codex.wordpress.org/Function_Reference/wp_editor' ),
+		'id' => 'editor_5',
+		'type' => 'editor',
+		'settings' => $wp_editor_settings );
 
 	return $options;
 }
