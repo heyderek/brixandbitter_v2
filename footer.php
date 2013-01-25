@@ -7,7 +7,7 @@
           <span>&copy;2012 Brix &amp; Bitter.  <?php wp_loginout(); ?>.  All Rights Reserved.</span>
         </div><!-- /#footer_lft -->
         <aside id="ft_logo">
-          <a href="#"><img src="<?php bloginfo('template_url'); ?>/images/bnb_logo-ft.png" /></a>
+          <a href="<?php bloginfo('home'); ?>"><img src="<?php bloginfo('template_url'); ?>/images/bnb_logo-ft.png" alt="Brix and Bitter Logo." /></a>
         </aside>
         <div id="footer_rt">
           <aside class="container">
