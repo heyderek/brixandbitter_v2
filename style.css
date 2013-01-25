@@ -298,6 +298,17 @@ footer {
 
 header {
   white-space: nowrap; }
+  header #logo {
+    position: absolute;
+    width: 13.75em;
+    display: block;
+    z-index: 9;
+    left: 1%;
+    top: 10px; }
+    header #logo img {
+      max-width: 100%;
+      width: 100%;
+      height: auto; }
   header hgroup, header nav {
     vertical-align: top;
     white-space: normal;
@@ -310,16 +321,6 @@ header {
       text-indent: -9999em;
       margin: 0;
       position: absolute; }
-    header hgroup #logo {
-      position: absolute;
-      width: 13.75em;
-      display: block;
-      z-index: 9;
-      left: 1%; }
-      header hgroup #logo img {
-        max-width: 100%;
-        width: 100%;
-        height: auto; }
   header nav {
     width: 62.75em;
     display: inline-block;
@@ -720,10 +721,11 @@ footer#colophon {
   header hgroup {
     display: block;
     width: 38.75em; }
-    header hgroup #logo {
-      width: 8.75em;
-      position: relative;
-      margin: 0 auto; }
+  header #logo {
+    width: 8.75em;
+    position: relative;
+    margin: 0 auto;
+    top: -10px; }
   header nav {
     border-top: 2px solid #333333;
     display: block;
@@ -770,10 +772,11 @@ footer#colophon {
   header hgroup {
     display: block;
     width: 18.75em; }
-    header hgroup #logo {
-      width: 8.75em;
-      position: relative;
-      margin: 0 auto; }
+  header #logo {
+    width: 8.75em;
+    position: relative;
+    margin: 0 auto;
+    top: -10px; }
   header nav {
     display: block;
     width: 18.75em;

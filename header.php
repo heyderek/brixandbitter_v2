@@ -21,8 +21,8 @@
       <hgroup>
         <h1><?php echo get_bloginfo( 'name' ); ?></h1>
         <h2><?php bloginfo( 'description' ); ?></h2>
-        <a href="<?php bloginfo('home'); ?>" id="logo"><img src="<?php bloginfo('template_url'); ?>/images/bnb_logo.png" /></a>
       </hgroup>
+      <a href="<?php bloginfo('home'); ?>" id="logo"><img src="<?php bloginfo('template_url'); ?>/images/bnb_logo.png" /></a>
       <nav><?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?></nav>
       <ul id="social">
         <li><a href="http://pinterest.com/brixandbitter/" title="Brix and Bitter on Pintrest"><img src="<?php bloginfo('template_url'); ?>/images/pintrest.png" alt="Brix and Bitter on Pintrest" /></a></li>

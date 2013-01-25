@@ -125,6 +125,17 @@ footer
 
 header
   white-space: nowrap
+  #logo
+    position: absolute
+    width: $cols3
+    display: block
+    z-index: 9
+    left: 1%
+    top: 10px
+    img
+      max-width: 100%
+      width: 100%
+      height: auto
   hgroup, nav
     vertical-align: top
     white-space: normal
@@ -137,16 +148,6 @@ header
       text-indent: -9999em
       margin: 0
       position: absolute
-    #logo
-      position: absolute
-      width: $cols3
-      display: block
-      z-index: 9
-      left: 1%
-      img
-        max-width: 100%
-        width: 100%
-        height: auto
   nav
     width: $cols13 - 1em
     display: inline-block
@@ -204,6 +205,7 @@ header
       font-size: 16px
       vertical-align: top
       box-sizing: border-box
+
 
 //Front Page
 
@@ -554,10 +556,11 @@ footer#colophon
     hgroup
       display: block
       width: $cols8
-      #logo
-        width: $cols2
-        position: relative
-        margin: 0 auto
+    #logo
+      width: $cols2
+      position: relative
+      margin: 0 auto
+      top: -10px
     nav
       border-top: 2px solid $drk_grey
       display: block
@@ -602,10 +605,11 @@ footer#colophon
     hgroup
       display: block
       width: $cols4
-      #logo
-        width: $cols2
-        position: relative
-        margin: 0 auto
+    #logo
+      width: $cols2
+      position: relative
+      margin: 0 auto
+      top: -10px
     nav
       display: block
       width: $cols4
