@@ -11,7 +11,7 @@ function cmb_sample_metaboxes( array $meta_boxes ) {
 				'type' => 'text_datetime_timestamp',
 			);
 	$options_pages = array();
-	$options_pages_obj = get_posts( array('post_type' => 'destinations'));
+	$options_pages_obj = get_posts( array('post_type' => 'destinations', 'posts_per_page'=> -1));
 		foreach ($options_pages_obj as $page) {
 			$options_pages[$page->ID] = $page->post_title;
 	}
